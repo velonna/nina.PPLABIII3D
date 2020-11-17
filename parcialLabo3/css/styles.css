@@ -16,22 +16,14 @@ img {
     max-width: 100%;
 }
 .contenedor {
-    width: 95%;
+    width:80%;
     max-width: 120rem; /** = 1200px; **/
     margin: 0 auto;
 }
 h1 {
-    color: midnightblue;
-    font-size: 3.8rem;
-}
-h2 {
-    font-size: 3.4rem;
-}
-h3 {
-    font-size: 3rem;
-}
-h4 {
-    font-size: 2.6rem;
+    color: cadetblue;
+    text-align: center;
+    margin: 0%;
 }
 
 /** Utilidades **/
@@ -39,9 +31,7 @@ h4 {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
-.fw-300 {
-    font-weight: 300;
-}
+
 .centrar-texto {
     text-align: center;
 }
@@ -49,73 +39,95 @@ h4 {
     display: block!important;
 }
 .contenido-centrado {
-    max-width: 800px;
+    max-width: 1000px;
+    min-width: 300px;
+    width: 100vw;
+    height: 80vh;
+    align-items: center;
 }
-
-
+.navheader{
+    background-image: url(../img/header.PNG);
+    background-repeat: no-repeat;
+    background-position: left;
+}
 .barra {
-    padding: 5rem;
-    background-color: #548abb;
+    padding: 3rem;
+    background-color:  #4988c1;    
 }
 .divh1class {
     text-align: center;
-    background-image: url(../img/img.PNG);
-    background-color: #548abb;
+    background-image: url(../img/rueda.gif);
+    background-color:  #4988c1 ;
 }
 .divclass{
-    text-align: center;
-   
-    background-color:white;
+    width:100%; 
+    height: 40vh;
+    background-image: url(../img/img.PNG) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2em;
+    display: flex;  
+    flex-wrap: wrap;
+    flex-direction: row;
 }
-@media (min-width: 768px) {
+@media (max-width: 668px) {
     .barra {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+    .divclass{
+        width:auto; 
+        height: auto;
+        background-image: url(../img/img.PNG) ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 2em;
+        display: flex;  
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .navheader{
+        background-image: url(../img/header.PNG);
+        background-repeat: no-repeat;
+        background-position: right;
+    }
 }
-
+.divContenedor{
+    
+    text-align: center;
+}
+fieldset{
+    text-align: left;
+    width: 60%;
+    display: inline;
+    
+}
 /** Navegacion **/
 .navegacion a {
     color: #ffffff;
     text-decoration: none;
     font-size: 2.2rem;  
-    display: block;     
-    
+    display: block; 
+    text-align: right;        
 }
-.labelT{
+.contentTrans{
     display: block;
+    text-align: center;
 }
-@media (min-width: 768px) {
-    .navegacion a {
-      /*  display: inline-block;*/
-        font-size: 1.8rem; /** = 18px **/
-        margin-right: 2rem;
-    }
-    .navegacion a:last-of-type {
-        margin: 0;
-    }
+.form_box
+{
+  width: 100%;
+  height: 100%;      
+  display: flex;
+  align-items: center;
 }
+
 .navegacion a:hover {
     color: #71B100;
 }
 
-input[type="radio"]{
-    width: auto;
-    margin: 0;
-}
-legend {
-    font-size: 2rem;
-    color: #4f4f4f;
-}
-label {
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-}
-input:not([type="submit"]),
-textarea,
-select {
+input:not([type="submit"]) {
     padding: 1rem;
     width: 100%;
     background-color: #e1e1e1;
@@ -131,27 +143,100 @@ select {
     -webkit-appearance: none;
     appearance: none;
 }
-textarea {
-    height: 20rem;
-}
+
 table{
-    border-collapse: collapse;/*para que collapse las lineas*/
+    border-collapse: collapse;
     margin: auto;
     }
-    table,th,td{
-    border:1px solid black;
+table,th,td{
+    border:1px solid cadetblue;
     padding: 5px;
+    width: auto;
     }
+td{
+    border: 1px solid black;
+    text-align:center;
+    
+}
+th{
+    background-color: #444;
+    color: #fff;
+}
+tfoot{
+    background-color:#444;
+}
 .center{
     align-items: center;
 }
-table thead {
-    color: #fff;
-    background-color: #f00;
-  }
 .pie{
-    color: white ;
-display:block;
+    width: 80%;
+    background-color:  #4988c1 ;  
+    margin: 0 auto;
+    padding-bottom: 2em;    
+    padding-left: 2em;
+    padding-right: 1em;
+    padding-top: 2em;
+    align-items: center;
+    color: #ffffff; 
+    display: flex;  
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+.spinner,.spinner:after{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -32px;
+    margin-left: -32px;
+    border-radius: 10%;
+    z-index: 2;
+    
+ }
+.spinner {   
+    background-color: transparent;
+    background: url('../img/rueda.gif') 50% 50% no-repeat;  
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    transform: translateZ(0);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: .6s;
+    animation-name: spinner-loading;
+    border-radius: 10%;
+ }
+
+@keyframes spinner-loading{
+  0% {
+      transform: rotate(0deg)
+  } to {
+      transform: rotate(1turn)
+  }
 }
 
+.pieLeft{
+    
+    width: 60%;
+    display: inline-block;
+    
+}
+.pieRigth{
+    display: inline-block;
+    width: 30%;    
+    text-align: right;
+    padding: 0px;
+}
+.navPie a{
+   
+        color: #ffffff;
+        text-decoration: none;
+}
+.divBotones{
+    width:50%;
+    max-width: 120rem; /** = 1200px; **/
+    margin: 0 auto;
+}
 

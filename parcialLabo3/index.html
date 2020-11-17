@@ -3,116 +3,102 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">      
-
-    <script src="./js/index.js" defer></script> 
+    <script src="./js/index.js" type="module"></script> 
     <link rel="stylesheet" href="./css/styles.css">    
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title id="title">Pisteando</title>   <!--    -->
 
 </head>
 
- <!-- onload="main();" -->
 <body>
-
-    <header class="site-header inicio">
-
+    <header class="site-header inicio">        
         <div class="contenedor contenido-header">
-
-            <div class="barra">
-
-                <a id = "aIndex" href="index.html" class="enlace" >
-
-                    <img src="img/header.png" alt="Logotipo">
-
-                </a>
-           
-
-                <nav id="navegacion" class="navegacion">
-
-                    <a href="#" class="enlace" id="link_nosotros">Nosotros</a>
-
-                    <a href="#" class="enlace" id="link_anuncios">Anuncios</a>
-
-                    <a href="#" class="enlace" id="link_blog">Blog</a>
-
-                    <a href="#" class="enlace" id="link_contacto">Contacto</a>
-
-                </nav>
-
-            </div>
-            <div id= "divh1" class="divclass"> 
-                <h1>Administracion</h1>
-             </div>
-            <div id= "divh1" class="divh1class"> 
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-            </div>
+            <div class="barra navheader">                                  
+                <div class="divNav">                   
             
+                </div>   
+                <nav id="navegacion" class="navegacion">
+                    <a href="#" class="enlace" id="link_nosotros">Nosotros</a>
+                    <a href="#" class="enlace" id="link_anuncios">Anuncios</a>
+                    <a href="#" class="enlace" id="link_blog">Blog</a>
+                    <a href="#" class="enlace" id="link_contacto">Contacto</a>
+                </nav>               
 
+            </div>
+            <h1>Administracion</h1>
+            <div class = "divclass">   
+                 <!-- img de barra-->   
+            <div>        
+                
         </div> <!-- contenedor -->
 
     </header>
-
-    <div id ="divContenedor">
-        <fieldset>Informacion del Anuncio
-        
-          
-
+    <div id= "divh1" class="divh1class"> 
+        <span id="spinner" class="spinner">   
+            </div>  
+    <div class="divContenedor">
+        <fieldset>Informacion del Anuncio     
                     <form id="formAnuncios" >
                         <div class="form-group">
                            Titulo
                             <input type="text" id="txtTitulo" placeholder="Ingrese Titulo..." >
+                            <input type="hidden" id="idtxt" >
                          </div>
-
-                         <div class="form-group ">                            
-                                <fieldset class ="labelT">
-
-                                    <legend>Transaccion</legend>
-                                    Venta  <input type = "radio" id="rdoV" value="Venta">
-
-                                    Alquiler  <input type = "radio" id="rdoA" value="Alquiler">                             
-                                </fieldset>
+                         Transaccion
+                         <div class="divBotones"> 
+                                    <div class="pieLeft">
+                                        Venta  <input type = "radio" id="rdoV" value="Venta">
+                                    </div>
+                                    <div class="pieRigth">
+                                        Alquiler  <input type = "radio" id="rdoA" value="Alquiler">  
+                                    </div> 
                          </div>
 
                          <div class="form-group">
                              Descripcion
-                                <input type="text" id="txtDescripcion" placeholder="Descripcion..." ">
+                                <input type="text" id="txtDescripcion" placeholder="Descripcion..." required>
                         </div>
                         <div class="form-group">
                             Precio
-                            <input type="text" id="txtPrecio" placeholder="Precio..."  >
+                            <i class="fas fa-money-bill-wave"></i><input type="text" id="txtPrecio" placeholder="Precio..." required >
                         </div>
-                        <div class="form-group"> 
-                           
-                                <input type="text" id="txtPuerta" placeholder="Puerta..."  >
-                                <input type="text" id="txtKm" placeholder="Km..."  >
-                                <input type="text" id="txtPotencia" placeholder="Potencia..."  >                                 
-                           
+                        <div class="form_box">                            
+                            <i class="fas fa-door-open"></i>  <input type="number" min="2" max="10" id="txtPuerta" placeholder="Puerta..." value = "4">
+                            <i class="fas fa-tachometer-alt"></i>  <input  type="number" min = "0" id="txtKm" placeholder="Km..." value="0" >
+                            <i class="fas fa-car-battery"></i>  <input  type="text" id="txtPotencia" placeholder="Potencia..."  >    
                           
                         </div>
-                        <div class="row">
-                             
-                            <div class="col-md-12">
-                            <input id="btnGuadar" type=image src="img/btnAceptar.jpg"  width="30" height="30" class="btn btn-lg btn-warning btn-block" type="button" value="Guardar">
-                            <input id="btnCancelar" type="reset" class="btn btn-lg btn-default btn-block" type="button" value="Cancelar">
-                            </div>
-                        </div>
+                       
                    </form>
-                   <div id="divTabla" class="center"></div>
+                <div class="divBotones">
+                    <div class="pieLeft">
+                        <button id="btnGuadar">
+                            <i class="far fa-save fa-2x"></i>
+                            Guardar
+                        </button>                                                    
+                   
+                    </div>
+                    <div class="pieRigth">
+                        <button id="btnCancelar">
+                            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                            Cancelar
+                        </button>
+        
+                    </div>
+                  
+                </div>
+
         </fieldset>
+        <div id="divTabla" class="center"></div>
+      
     </div>
 
-    <footer class="barra pie">
-        <div >
-            <nav id="navegacion" >
+    <footer class="pie">
+        <div class="pieLeft">
+            <nav class="navPie">
 
                 <a href="#" class="enlace" id="link_nosotros">Nosotros</a>
 
@@ -123,7 +109,11 @@
                 <a href="#" class="enlace" id="link_contacto">Contacto</a>
 
             </nav>
-            <p class="copyright">Todos los Derechos Reservados 2019 &copy; </p>
+           
+        </div>
+        <div class="pieRigth">
+            <span>Todos los Derechos Reservados 2019 &copy; </span>
+
         </div>
     </footer>
 

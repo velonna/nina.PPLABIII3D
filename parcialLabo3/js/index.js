@@ -1,8 +1,30 @@
-let autos = 
-[{"id":1,"titulo":"Goldie","transaccion":"descripcion","precio":"5","numeroPuertas":"6","numKM":"0","potencia":"7"},
-{"id":2,"titulo":"Goldie","transaccion":"descripcion","precio":"6","numeroPuertas":"6","numKM":"5","potencia":"3"},
-{"id":3,"titulo":"Goldie","transaccion":"descripcion","precio":"7","numeroPuertas":"6","numKM":"7","potencia":"6"},
-{"id":4,"titulo":"Goldie","transaccion":"descripcion","precio":"8","numeroPuertas":"4","numKM":"3","potencia":"6"}];
+import Anuncio,{a} from './class.js'
+import {autos} from './data.js'
+const spinner = document.getElementById("spinner");
+window.addEventListener("load",inicioParametros);
+
+function inicioParametros(){
+    
+    spinner.setAttribute("hidden", "");
+    document.getElementById("btnGuadar").addEventListener("click",activarSpinner);
+   /* let ruedaSpinner =document.getElementById("spinner");
+    */
+    console.log(a);    
+}
+function activarSpinner(){
+ //  
+    spinner.removeAttribute("hidden");
+    window.setTimeout(function() {
+        activarTiempoDeEspera(1);
+      },1000);  
+}
+function activarTiempoDeEspera(a){
+    
+    spinner.setAttribute("hidden", "");
+    const anuncio = new Anuncio("2","hola","transaccion","descr","23");
+    console.log(anuncio._id);
+    console.log(a);
+}
 
 
 console.log(autos);
@@ -12,10 +34,10 @@ btnTabla.addEventListener('click',function(){
     
     const divTabla = document.getElementById('divTabla');
  divTabla.appendChild(crearTabla(autos));
+ 
 
 });
-function crearTabla(lista){
-   
+function crearTabla(lista){   
     const tabla = document.createElement('table');
     tabla.appendChild(crearCabecera(lista[0]));
     tabla.appendChild(crearCuerpo(lista));
@@ -84,24 +106,10 @@ function agregarManejadorTr(tr){
     }
 }
 
-class Anuncio {
-    constructor(id, titulo,transaccion,descripcion,precio) {
-      this.id = id;
-      this.titulo = titulo;
-      this.transaccion = transaccion;
-      this.descripcion = descripcion;
-      this.precio = precio;
-      
-    }
-    agregar() {
-        console.log("un anuncio");
-    }
-  }
-  class Anuncio_Auto extends Anuncio {
-   
-  }
+
+ 
 
   localStorage.setItem("timer","tiempo");
-  localStorage.setItem("Anuncios",Anuncio_Auto);
+  localStorage.setItem("Anuncios",Anuncio);
   
   
