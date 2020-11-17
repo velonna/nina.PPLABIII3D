@@ -8,6 +8,11 @@
 
     <script src="./js/index.js" type="module"></script> 
     <link rel="stylesheet" href="./css/styles.css">    
+    
+    <link rel = "stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel = "stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel = "stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel = "stylesheet" href="./node_modules/bootstrap/dist/js/bootstrap.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title id="title">Pisteando</title>   <!--    -->
 
@@ -36,25 +41,29 @@
         </div> <!-- contenedor -->
 
     </header>
-    <div id= "divh1" class="divh1class"> 
-        <span id="spinner" class="spinner">   
-            </div>  
-    <div class="divContenedor">
-        <fieldset>Informacion del Anuncio     
-                    <form id="formAnuncios" >
+    <div class="container-fluid">    
+        <div id= "divh1" class="divh1class"> 
+            <span id="spinner" class="spinner">   
+                </div>  
+        <div class="divContenedor">
+            <fieldset>Informacion del Anuncio     
+                    <form id="form">
                         <div class="form-group">
                            Titulo
-                            <input type="text" id="txtTitulo" placeholder="Ingrese Titulo..." >
+                            <input class ="form-control "type="text" id="txtTitulo" placeholder="Ingrese Titulo..." >
                             <input type="hidden" id="idtxt" >
                          </div>
                          Transaccion
                          <div class="divBotones"> 
-                                    <div class="pieLeft">
-                                        Venta  <input type = "radio" id="rdoV" value="Venta">
-                                    </div>
-                                    <div class="pieRigth">
-                                        Alquiler  <input type = "radio" id="rdoA" value="Alquiler">  
-                                    </div> 
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdoV" value="option1" checked = "true">
+                                <label class="form-check-label" for="rdoV"> Venta</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdoA" value="option2">
+                                <label class="form-check-label" for="rdoA">Alquiler</label>
+                              </div>
+
                          </div>
 
                          <div class="form-group">
@@ -75,7 +84,7 @@
                    </form>
                 <div class="divBotones">
                     <div class="pieLeft">
-                        <button id="btnGuadar">
+                        <button type="submit" id="btnGuadar">
                             <i class="far fa-save fa-2x"></i>
                             Guardar
                         </button>                                                    
@@ -91,9 +100,9 @@
                   
                 </div>
 
-        </fieldset>
-        <div id="divTabla" class="center"></div>
-      
+            </fieldset>
+            <div id="divTabla" class="divTabla"></div>
+        </div> 
     </div>
 
     <footer class="pie">

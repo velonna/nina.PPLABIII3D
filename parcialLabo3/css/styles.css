@@ -147,6 +147,7 @@ select {
 table{
     border-collapse: collapse;
     margin: auto;
+    width: 50%;
     }
 table,th,td{
     border:1px solid cadetblue;
@@ -239,4 +240,9 @@ tfoot{
     max-width: 120rem; /** = 1200px; **/
     margin: 0 auto;
 }
-
+.divTabla{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  
+}
