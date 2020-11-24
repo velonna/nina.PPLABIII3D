@@ -11,10 +11,6 @@ body {
     line-height: 2;
 }
 
-/** Globales **/
-img {
-    max-width: 100%;
-}
 .contenedor {
     width:80%;
     max-width: 120rem; /** = 1200px; **/
@@ -35,9 +31,7 @@ h1 {
 .centrar-texto {
     text-align: center;
 }
-.d-block {
-    display: block!important;
-}
+
 .contenido-centrado {
     max-width: 1000px;
     min-width: 300px;
@@ -45,10 +39,14 @@ h1 {
     height: 80vh;
     align-items: center;
 }
-.navheader{
-    background-image: url(../img/header.PNG);
+.navheader{    
+    display: flex;
+    
+}
+.divNav{
+    background-image: url(../img/logoHeader.PNG);
     background-repeat: no-repeat;
-    background-position: left;
+    width: 80%;
 }
 .barra {
     padding: 3rem;
@@ -88,7 +86,7 @@ h1 {
         flex-direction: column;
     }
     .navheader{
-        background-image: url(../img/header.PNG);
+        background-image: url(../img/logoHeader.PNG);
         background-repeat: no-repeat;
         background-position: right;
     }
@@ -109,7 +107,8 @@ fieldset{
     text-decoration: none;
     font-size: 2.2rem;  
     display: block; 
-    text-align: right;        
+    text-align: right;     
+       
 }
 .contentTrans{
     display: block;

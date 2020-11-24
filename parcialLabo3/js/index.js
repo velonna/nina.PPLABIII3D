@@ -222,4 +222,30 @@ function modificarAnuncio(anuncio) {
     }
 
 }
-  
+ //////////segundo paracial//////////////
+ function traerAutos() {
+    ol.innerHTML = "";
+    spinner.appendChild(crearSpinner());
+    fetch("http://localhost:3000/personas")
+        .then((res) => {
+            return res.ok ? res.json() : Promise.reject(res);
+        })
+        .then((data) => {
+            ol.appendChild(crearItems(data));
+            console.log("Personas obtenidas con exito");
+
+        })
+        .catch((err) => {
+            let mensaje = err.statusText || "Se produjo un error";
+            console.error("ERROR: " + err.status + "-" + mensaje);
+
+        })
+        .finally(() => {
+            spinner.innerHTML = "";
+
+        });
+
+
+}
+
+ 
